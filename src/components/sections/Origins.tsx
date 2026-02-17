@@ -42,7 +42,7 @@ const Origins: React.FC = () => {
                     >
                         <div className="relative w-full max-w-md aspect-square flex items-center justify-center p-8 glass-card rounded-full border border-gold/20 shadow-[0_0_50px_rgba(255,215,0,0.1)]">
                             <img
-                                src="/Award.png"
+                                src={`${import.meta.env.BASE_URL}Award.png`}
                                 alt="Ulster Winners Award 2016"
                                 className="w-full h-full object-contain drop-shadow-2xl"
                             />

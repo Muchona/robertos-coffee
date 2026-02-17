@@ -57,11 +57,70 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews, onWriteReview, onViewAll }) 
                     viewport={{ once: true }}
                     className="flex flex-col gap-12"
                 >
-                    {/* Top: Summary Card... (omitted for brevity, assume unchanged unless we need to touch it)
-                        Actually, replace_file_content needs context. I will target the Return statement block related to the grid.
-                    */}
+                    {/* Top: Summary Card (Redesigned for Full Width) */}
+                    <div className="glass-card p-8 md:p-10 rounded-3xl border border-white/5 bg-white/[0.02] backdrop-blur-xl relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
 
-                    {/* ... (Summary Card Code above stays the same) ... */}
+                        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+                            {/* Title & Big Number */}
+                            <div className="text-center md:text-left space-y-2">
+                                <h2 className="text-3xl font-display font-bold text-white">Customer Reviews</h2>
+                                <p className="text-silver/60 text-sm max-w-xs mx-auto md:mx-0">
+                                    Trusted by coffee lovers and bagel enthusiasts across Monaghan.
+                                </p>
+                                <div className="pt-4">
+                                    <div className="flex items-baseline justify-center md:justify-start gap-3">
+                                        <span className="text-7xl font-display font-bold text-white tracking-tighter shadow-gold/20 drop-shadow-lg">{averageRating}</span>
+                                        <div className="flex flex-col items-start">
+                                            <div className="flex text-gold gap-1">
+                                                {[1, 2, 3, 4, 5].map((star) => (
+                                                    <Star key={star} className={`w-5 h-5 ${star <= Math.round(Number(averageRating)) ? 'fill-current' : 'text-white/20'}`} />
+                                                ))}
+                                            </div>
+                                            <span className="text-silver/50 text-xs mt-1 tracking-widest uppercase">{totalReviews} verified reviews</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Progress Bars */}
+                            <div className="flex-1 w-full max-w-sm space-y-3">
+                                {[5, 4, 3, 2, 1].map((star) => {
+                                    const count = currentDist[star as keyof typeof currentDist];
+                                    const percentage = (count / totalReviews) * 100;
+                                    return (
+                                        <div key={star} className="flex items-center gap-4 text-xs font-medium">
+                                            <span className="w-3 text-white/40 text-right">{star}</span>
+                                            <div className="flex-1 h-2 bg-white/5 rounded-full overflow-hidden backdrop-blur-sm shadow-inner">
+                                                <motion.div
+                                                    initial={{ width: 0 }}
+                                                    whileInView={{ width: `${percentage}%` }}
+                                                    transition={{ duration: 1, delay: 0.2 }}
+                                                    className="h-full bg-gold/90 rounded-full shadow-[0_0_10px_rgba(255,215,0,0.3)]"
+                                                />
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Actions Column */}
+                            <div className="flex flex-col gap-3 w-full md:w-auto min-w-[180px]">
+                                <button
+                                    onClick={onWriteReview}
+                                    className="w-full py-4 rounded-xl bg-gold text-black hover:bg-white transition-all duration-300 font-bold tracking-wide uppercase text-sm shadow-[0_4px_20px_rgba(255,215,0,0.15)] hover:shadow-[0_4px_25px_rgba(255,255,255,0.2)] transform hover:-translate-y-1"
+                                >
+                                    Write a review
+                                </button>
+                                <button
+                                    onClick={onViewAll}
+                                    className="w-full py-3 rounded-xl border border-white/10 text-silver hover:text-white hover:border-gold/30 hover:bg-gold/5 transition-all text-xs uppercase tracking-widest"
+                                >
+                                    View All Reviews
+                                </button>
+                            </div>
+                        </div>
+                    </div>
 
                     {/* Bottom: Review Cards (4-Column Grid) */}
                     <div className="space-y-6">

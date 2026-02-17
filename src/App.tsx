@@ -47,7 +47,7 @@ function App() {
             <CornerDecorations />
             <ScrollSequence
               frameCount={296}
-              pathBase="/images/ezgif-frame-"
+              pathBase={`${import.meta.env.BASE_URL}images/ezgif-frame-`}
               extension=".jpg"
               digits={3}
               scaleFactor={0.85}

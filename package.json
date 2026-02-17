@@ -2,6 +2,7 @@
   "name": "robertos-coffee",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://muchona.github.io/robertos-coffee/",
   "type": "module",
   "scripts": {
     "dev": "vite",

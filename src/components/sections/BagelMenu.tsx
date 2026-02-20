@@ -63,7 +63,7 @@ const BagelMenu: React.FC = () => {
                     </div>
                 </motion.div>
 
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 min-h-[600px]">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 min-h-[600px]">
                     <AnimatePresence mode="wait">
                         {activeItems.map((item, index) => (
                             <motion.div
@@ -76,7 +76,7 @@ const BagelMenu: React.FC = () => {
                             >
                                 <div className="glass-card border border-white/5 rounded-2xl overflow-hidden hover:border-gold/30 transition-all duration-300 h-full flex flex-col">
                                     {/* Image Placeholder */}
-                                    <div className="h-48 bg-neutral-900 relative flex items-center justify-center overflow-hidden">
+                                    <div className="h-28 md:h-48 bg-neutral-900 relative flex items-center justify-center overflow-hidden">
                                         <div className="absolute inset-0 bg-white/5 group-hover:bg-white/10 transition-colors" />
                                         <span className="text-white/20 font-display text-lg z-10 uppercase tracking-widest">
                                             {item.title}
@@ -85,22 +85,22 @@ const BagelMenu: React.FC = () => {
                                         <div className="absolute inset-0 bg-gradient-to-t from-void via-transparent to-transparent opacity-60" />
                                     </div>
 
-                                    <div className="p-6 flex flex-col flex-grow">
-                                        <div className="flex justify-between items-start mb-2">
-                                            <h3 className="text-xl font-bold text-white group-hover:text-gold transition-colors">
+                                    <div className="p-3 md:p-6 flex flex-col flex-grow">
+                                        <div className="flex flex-col xl:flex-row justify-between items-start gap-2 mb-2">
+                                            <h3 className="text-base md:text-xl font-bold text-white group-hover:text-gold transition-colors leading-tight">
                                                 {item.title}
                                             </h3>
-                                            <span className="text-xs font-mono text-silver/40 border border-white/10 px-2 py-1 rounded">
+                                            <span className="text-[10px] md:text-xs font-mono text-silver/40 border border-white/10 px-1.5 py-0.5 md:px-2 md:py-1 rounded whitespace-nowrap">
                                                 {item.calories} kcal
                                             </span>
                                         </div>
 
-                                        <p className="text-silver/80 text-sm leading-relaxed mb-4 flex-grow">
+                                        <p className="text-silver/80 text-[11px] md:text-sm leading-relaxed mb-4 flex-grow line-clamp-3">
                                             {item.description}
                                         </p>
 
-                                        <div className="pt-4 border-t border-white/5 flex justify-between items-center mt-auto">
-                                            <span className="text-gold font-display text-lg">{item.price}</span>
+                                        <div className="pt-3 md:pt-4 border-t border-white/5 flex justify-between items-center mt-auto">
+                                            <span className="text-gold font-display text-sm md:text-lg">{item.price}</span>
 
                                         </div>
                                     </div>

@@ -3,7 +3,6 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/layout/Hero';
 import ScrollSequence from './components/ui/ScrollSequence';
-import CornerDecorations from './components/ui/CornerDecorations';
 import Origins from './components/sections/Origins';
 import BagelMenu from './components/sections/BagelMenu';
 import Gallery from './components/sections/Gallery';
@@ -44,7 +43,6 @@ function App() {
         {view === 'home' && (
           <div key="home">
             <Navbar />
-            <CornerDecorations />
             <ScrollSequence
               frameCount={296}
               pathBase={`${import.meta.env.BASE_URL}images/ezgif-frame-`}

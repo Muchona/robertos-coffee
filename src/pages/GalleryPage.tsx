@@ -27,16 +27,13 @@ const GalleryPage: React.FC<GalleryPageProps> = ({ onBack }) => {
                     <span className="font-display tracking-widest text-sm">BACK TO HOME</span>
                 </button>
                 <div className="text-right">
-                    <h1 className="text-4xl font-display font-bold text-white tracking-widest">
-                        ARCHIVE <span className="text-gold">001</span>
-                    </h1>
                     <p className="text-silver/50 text-xs font-mono tracking-[0.2em]">ROBERTO'S VISUAL DATABASE</p>
                 </div>
             </div>
 
             {/* Masonry Grid */}
             <div className="min-h-screen px-4 py-32 md:px-8">
-                <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
+                <div className="columns-4 md:columns-4 lg:columns-4 gap-4 space-y-4">
                     {galleryImages.map((src, index) => (
                         <motion.div
                             key={index}

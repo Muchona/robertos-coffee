@@ -26,10 +26,10 @@ const Hero: React.FC = () => {
                         Where every sip creates a moment of silence.
                     </p>
 
-                    <div className="mt-10 flex justify-center gap-6">
+                    <div className="mt-24 sm:mt-10 flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
                         <motion.a
                             href="#reserve"
-                            className="px-8 py-4 rounded-full bg-gold/10 border border-gold/50 text-gold font-medium tracking-wide backdrop-blur-md shadow-[0_0_20px_rgba(255,215,0,0.1)] relative overflow-visible group flex items-center justify-center"
+                            className="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-gold/10 border border-gold/50 text-gold text-sm sm:text-base font-medium tracking-wide backdrop-blur-md shadow-[0_0_20px_rgba(255,215,0,0.1)] relative overflow-visible group flex items-center justify-center"
                             whileHover="hover"
                             initial="idle"
                         >
@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
 
                         <motion.a
                             href="#menu"
-                            className="px-8 py-4 rounded-full border border-white/10 text-white font-medium tracking-wide backdrop-blur-md relative overflow-visible group flex items-center justify-center bg-white/5"
+                            className="px-6 py-3 sm:px-8 sm:py-4 rounded-full border border-white/10 text-white text-sm sm:text-base font-medium tracking-wide backdrop-blur-md relative overflow-visible group flex items-center justify-center bg-white/5"
                             whileHover="hover"
                             initial="idle"
                         >

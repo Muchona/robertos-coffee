@@ -93,8 +93,17 @@ const ScrollSequence: React.FC<ScrollSequenceProps> = ({
         // Clear and draw
         const img = images[index];
 
+        // Determine if mobile for custom scaling
+        const isMobile = window.innerWidth < 768;
+
         // Maintain aspect ratio cover logic with custom scale factor
-        const coverScale = Math.max(canvas.width / img.width, canvas.height / img.height);
+        let coverScale = Math.max(canvas.width / img.width, canvas.height / img.height);
+
+        // Reduce scale significantly on mobile to avoid massive zoom
+        if (isMobile) {
+            coverScale = coverScale * 0.5; // 50% size for mobile
+        }
+
         const finalScale = coverScale * scaleFactor;
 
         const x = (canvas.width / 2) - (img.width / 2) * finalScale;

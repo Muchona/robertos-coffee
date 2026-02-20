@@ -58,7 +58,7 @@ const Gallery: React.FC<GalleryProps> = ({ onOpenGallery }) => {
                         <div
                             key={index}
                             onClick={onOpenGallery}
-                            className="relative w-[300px] h-[400px] md:w-[400px] md:h-[500px] flex-shrink-0 group overflow-hidden rounded-xl border border-white/10 bg-white/5 cursor-pointer"
+                            className="relative w-[220px] h-[300px] md:w-[400px] md:h-[500px] flex-shrink-0 group overflow-hidden rounded-xl border border-white/10 bg-white/5 cursor-pointer"
                         >
                             <img
                                 src={src}
